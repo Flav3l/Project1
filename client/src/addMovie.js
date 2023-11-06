@@ -34,19 +34,18 @@ export const AddMovie = () => {
   };
 
   return (
-    <div className='flex my-10 justify-center items-center flex-col p-10 bg-stone-200 rounded-lg gap-3'>
-      <h2 className=' text-3xl mb-2'>Movie to Add</h2>
-      <div className='relative flex py-5 items-center w-full'>
-        <div className='flex-grow border-t border-slate-600'></div>
-        <span className='flex-shrink mx-4 text-slate-600'>Info</span>
-        <div className='flex-grow border-t border-slate-600'></div>
+    <div>
+      <h2>Movie to Add</h2>
+      <div>
+        <div></div>
+        <span>Info</span>
+        <div></div>
       </div>
 
       <label>
-        <span className='mx-3'>Title:</span>
+        <span>Title:</span>
         <input
           type='text'
-          className='rounded-lg px-3 border-slate-400 border-2'
           id='name'
           name='search'
           placeholder='name of movie'
@@ -55,7 +54,7 @@ export const AddMovie = () => {
             setAddMovie({ ...addMovie, name: e.target.value });
             console.log(addMovie);
           }}
-          onKeyPress={e => {
+          onKeyUp={e => {
             if (e.key === 'Enter') {
               console.log(e.target.value);
             }
@@ -63,10 +62,9 @@ export const AddMovie = () => {
         />
       </label>
       <label>
-        <span className='mx-3'>Date:</span>
+        <span>Date:</span>
         <input
           type='text'
-          className='rounded-lg px-3 border-slate-400 border-2'
           id='name'
           name='search'
           placeholder='Release date of movie'
@@ -75,7 +73,7 @@ export const AddMovie = () => {
             setAddMovie({ ...addMovie, date: e.target.value });
             console.log(addMovie);
           }}
-          onKeyPress={e => {
+          onKeyUp={e => {
             if (e.key === 'Enter') {
               console.log(e.target.value);
             }
@@ -83,10 +81,9 @@ export const AddMovie = () => {
         />
       </label>
       <label>
-        <span className='mx-3'>Studio:</span>
+        <span>Studio:</span>
         <input
           type='text'
-          className='rounded-lg px-3 border-slate-400 border-2'
           id='name'
           name='search'
           placeholder='Studio of movie'
@@ -95,7 +92,7 @@ export const AddMovie = () => {
             setAddMovie({ ...addMovie, studio: e.target.value });
             console.log(addMovie);
           }}
-          onKeyPress={e => {
+          onKeyUp={e => {
             if (e.key === 'Enter') {
               console.log(e.target.value);
             }
@@ -103,10 +100,9 @@ export const AddMovie = () => {
         />
       </label>
       <label>
-        <span className='mx-3'>Country:</span>
+        <span>Country:</span>
         <input
           type='text'
-          className='rounded-lg px-3 border-slate-400 border-2'
           id='name'
           name='search'
           placeholder='Country of movie'
@@ -115,7 +111,7 @@ export const AddMovie = () => {
             setAddMovie({ ...addMovie, country: e.target.value });
             console.log(addMovie);
           }}
-          onKeyPress={e => {
+          onKeyUp={e => {
             if (e.key === 'Enter') {
               console.log(e.target.value);
             }
@@ -123,10 +119,9 @@ export const AddMovie = () => {
         />
       </label>
       <label>
-        <span className='mx-3'>Runtime:</span>
+        <span>Runtime:</span>
         <input
           type='text'
-          className='rounded-lg px-3 border-slate-400 border-2'
           id='name'
           name='search'
           placeholder='Runtime of movie: Minutes'
@@ -135,7 +130,7 @@ export const AddMovie = () => {
             setAddMovie({ ...addMovie, runtime: e.target.value });
             console.log(addMovie);
           }}
-          onKeyPress={e => {
+          onKeyUp={e => {
             if (e.key === 'Enter') {
               console.log(e.target.value);
             }
@@ -143,10 +138,9 @@ export const AddMovie = () => {
         />
       </label>
       <label>
-        <span className='mx-3'>Rating:</span>
+        <span>Rating:</span>
         <input
           type='text'
-          className='rounded-lg px-3 border-slate-400 border-2'
           id='name'
           name='search'
           placeholder='Rating of movie "0-100"'
@@ -155,7 +149,7 @@ export const AddMovie = () => {
             setAddMovie({ ...addMovie, rating: e.target.value });
             console.log(addMovie);
           }}
-          onKeyPress={e => {
+          onKeyUp={e => {
             if (e.key === 'Enter') {
               console.log(e.target.value);
             }
@@ -163,7 +157,6 @@ export const AddMovie = () => {
         />
       </label>
       <button
-        className='bg-slate-600 rounded px-2 w-40 h-8 text-stone-100 hover:font-bold hover:bg-slate-500'
         onClick={() => {
           console.log(addMovie);
           postMovie();
@@ -174,13 +167,7 @@ export const AddMovie = () => {
 
       {returnInfo[0] === undefined ? null : (
         <>
-          <div className='relative flex py-5 items-center w-full'>
-            <div className='flex-grow border-t border-slate-600'></div>
-            <span className='flex-shrink mx-4 text-slate-600'>Movie Added</span>
-            <div className='flex-grow border-t border-slate-600'></div>
-          </div>
-
-          <span className='text-3xl'>{returnInfo[0].name}</span>
+            <span>Movie Added</span>
           <ul>
             <li>Rating: {returnInfo[0].rating}</li>
             <li>Studio: {returnInfo[0].studio}</li>

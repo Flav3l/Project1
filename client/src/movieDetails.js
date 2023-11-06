@@ -36,15 +36,14 @@ export const MovieDetail = () => {
   return (
     <>
       {CurrentMovieDetail[0] !== undefined ? (
-        <div className='flex my-10 justify-center items-center flex-col p-10 bg-stone-200 rounded-lg gap-3'>
-          <div className='flex flex-col justify-center items-center'>
-            <span className='text-4xl'>{CurrentMovieDetail[0].name}</span>
-            <div className='relative flex py-5 items-center w-full'>
-              <div className='flex-grow border-t border-slate-600'></div>
-              <span className='flex-shrink mx-4 text-slate-600'>
+        <div>
+          <div>
+            <span>{CurrentMovieDetail[0].name}</span>
+            <div>
+              <div></div>
+              <span>
                 Information
               </span>
-              <div className='flex-grow border-t border-slate-600'></div>
             </div>
             <ul>
               <li>Rating: {CurrentMovieDetail[0].rating}</li>
@@ -55,7 +54,6 @@ export const MovieDetail = () => {
             </ul>
           </div>
           <button
-            className='bg-slate-600 rounded px-2 w-40 h-8 text-stone-100 hover:font-bold hover:bg-slate-500'
             onClick={e => {
               console.log('call delete');
               deleteMovie();
